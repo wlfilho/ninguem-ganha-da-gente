@@ -1,0 +1,18 @@
+{
+  "name": "ninguem-ganha-da-gente",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "echo 'Static site — nothing to build. Deploy index.html directly.'",
+    "preview": "vite preview",
+    "update-rivals": "node scripts/update-rivals.js",
+    "fetch-schedule": "node scripts/fetch-schedule.js",
+    "backfill": "node scripts/backfill.js",
+    "apply-backfill": "node scripts/apply-backfill.js"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

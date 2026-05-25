@@ -1,0 +1,217 @@
+{
+  "lastUpdated": "2026-05-25",
+  "processedEventIds": [
+    "5103524"
+  ],
+  "rivals": [
+    {
+      "id": "vasco",
+      "name": "Vasco da Gama",
+      "teamId": 10276,
+      "emoji": "⚓",
+      "lastLoss": "2023-03-05",
+      "lastScore": "Vasco 1×0 Flamengo",
+      "competition": "Campeonato Carioca",
+      "gamesSince": 18,
+      "taunt": "Nem o SAF salvou vocês de apanhar do Mengão."
+    },
+    {
+      "id": "botafogo",
+      "name": "Botafogo",
+      "teamId": 8517,
+      "emoji": "⭐",
+      "lastLoss": "2024-08-18",
+      "lastScore": "Botafogo 4×1 Flamengo",
+      "competition": "Campeonato Brasileiro",
+      "gamesSince": 6,
+      "taunt": "Libertadores foi um acidente. O clássico é nosso."
+    },
+    {
+      "id": "fluminense",
+      "name": "Fluminense",
+      "teamId": 9863,
+      "emoji": "🌸",
+      "lastLoss": "2025-11-19",
+      "lastScore": "Fluminense 2×1 Flamengo",
+      "competition": "Brasileirão 34ª Rodada",
+      "gamesSince": 2,
+      "taunt": "Pó de arroz não apaga derrota no mata-mata."
+    },
+    {
+      "id": "corinthians",
+      "name": "Corinthians",
+      "teamId": 9808,
+      "emoji": "🐷",
+      "lastLoss": "2024-09-29",
+      "lastScore": "Corinthians 1×0 Flamengo",
+      "competition": "Campeonato Brasileiro",
+      "gamesSince": 5,
+      "taunt": "Timão só ganha quando a arbitragem ajuda."
+    },
+    {
+      "id": "palmeiras",
+      "name": "Palmeiras",
+      "teamId": 10283,
+      "emoji": "🐷",
+      "lastLoss": "2026-05-24",
+      "lastScore": "Palmeiras 3×0 Flamengo",
+      "competition": "Brasileirão Série A",
+      "gamesSince": 0,
+      "taunt": "Porco rico, porco pobre. Mengão sempre na frente."
+    },
+    {
+      "id": "atletico-mg",
+      "name": "Atlético Mineiro",
+      "teamId": 10272,
+      "emoji": "🐓",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Galo canta, mas quem manda no Brasil é o Mengão."
+    },
+    {
+      "id": "sao-paulo",
+      "name": "São Paulo",
+      "teamId": 10277,
+      "emoji": "🔴",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Tricolor de SP, mas campeão quem é é o do Rio."
+    },
+    {
+      "id": "internacional",
+      "name": "Internacional",
+      "teamId": 8702,
+      "emoji": "❤️",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Colorado, mas a conta com o Fla nunca fecha."
+    },
+    {
+      "id": "gremio",
+      "name": "Grêmio",
+      "teamId": 9769,
+      "emoji": "💙",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Imortal? No confronto com o Mengão, muito mortal."
+    },
+    {
+      "id": "santos",
+      "name": "Santos",
+      "teamId": 8514,
+      "emoji": "🐟",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Baixada Santista sem Pelé é só peixe seco."
+    },
+    {
+      "id": "cruzeiro",
+      "name": "Cruzeiro",
+      "teamId": 9781,
+      "emoji": "✨",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Celeste ou azul, o Mengão faz vocês ficarem roxos."
+    },
+    {
+      "id": "bahia",
+      "name": "Bahia",
+      "teamId": 7877,
+      "emoji": "🔷",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Esquadrão de Aço enferruja quando enfrenta o Mengão."
+    },
+    {
+      "id": "athletico-pr",
+      "name": "Athletico Paranaense",
+      "teamId": 10273,
+      "emoji": "🌪️",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Furacão? O Mengão nem sentiu a brisa."
+    },
+    {
+      "id": "bragantino",
+      "name": "Red Bull Bragantino",
+      "teamId": 109705,
+      "emoji": "🐂",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Touro Mecânico não aguenta o Mengão na pista."
+    },
+    {
+      "id": "mirassol",
+      "name": "Mirassol",
+      "teamId": 163782,
+      "emoji": "🦁",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Bem-vindo à Série A. O Fla vai te dar as boas-vindas na marra."
+    },
+    {
+      "id": "vitoria",
+      "name": "Vitória",
+      "teamId": 7733,
+      "emoji": "🦅",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Rubro-Negro de Salvador, mas só existe um rei rubro-negro."
+    },
+    {
+      "id": "coritiba",
+      "name": "Coritiba",
+      "teamId": 9767,
+      "emoji": "🌿",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Coxa-Branca. Bom apelido pra quem apanha do Mengão."
+    },
+    {
+      "id": "chapecoense",
+      "name": "Chapecoense",
+      "teamId": 197693,
+      "emoji": "💚",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Coragem pra jogar contra o Fla você tem. Sorte, não."
+    },
+    {
+      "id": "remo",
+      "name": "Remo",
+      "teamId": 1626,
+      "emoji": "🔵",
+      "lastLoss": "2026-05-25",
+      "lastScore": "Aguardando backfill",
+      "competition": "—",
+      "gamesSince": 0,
+      "taunt": "Bem-vindo à elite. O Mengão vai te mostrar onde você está."
+    }
+  ]
+}

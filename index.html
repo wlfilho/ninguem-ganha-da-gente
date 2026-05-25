@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ninguém Ganha da Gente · Flamengo</title>
+
+  <!-- Open Graph / WhatsApp / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ninguém Ganha da Gente 🔴⚫" />
+  <meta property="og:description" content="O placar do domínio rubro-negro. Veja há quantos dias e jogos cada rival não vence o Mengão." />
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flamengo_braz_logo.svg/400px-Flamengo_braz_logo.svg.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ninguém Ganha da Gente 🔴⚫" />
+  <meta name="twitter:description" content="O placar do domínio rubro-negro." />
+  <meta name="theme-color" content="#E8132A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #E8132A;
+      --gold: #C9A84C;
+      --gold-light: #e4c06e;
+      --bg: #0a0a0a;
+      --card-bg: #111111;
+      --text: #f0f0f0;
+      --muted: #888;
+      --border: #1e1e1e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      /* Noise texture via SVG data URI */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ─── Header ─── */
+    header {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,19,42,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-badge {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 0.3rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .site-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 12vw, 9rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #E8132A 0%, #ff4a61 30%, var(--gold) 60%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 40px rgba(232,19,42,0.35));
+    }
+
+    .site-subtitle {
+      margin-top: 1rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .header-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--gold));
+      margin: 1.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* ─── Grid ─── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Card ─── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      /* Entrance animation */
+      opacity: 0;
+      transform: translateY(28px);
+      animation: cardIn 0.55s ease forwards;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,19,42,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 0 1px rgba(232,19,42,0.4), 0 8px 40px rgba(232,19,42,0.2);
+      transform: translateY(-2px) scale(1.015);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stagger delays */
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.15s; }
+    .card:nth-child(3) { animation-delay: 0.25s; }
+    .card:nth-child(4) { animation-delay: 0.35s; }
+    .card:nth-child(5) { animation-delay: 0.45s; }
+    .card:nth-child(6) { animation-delay: 0.55s; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .rival-emoji {
+      font-size: 2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .rival-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: 0.03em;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ─── Counter ─── */
+    .counter-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .counter-days {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 5rem);
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 30px rgba(201,168,76,0.4);
+    }
+
+    .counter-days .days-num { display: inline; }
+
+    .counter-clock {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      margin-top: 0.1rem;
+      opacity: 0.85;
+    }
+
+    .counter-clock .tick {
+      display: inline-block;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* ─── Badge ─── */
+    .games-badge {
+      display: inline-block;
+      margin-top: 0.9rem;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.85rem;
+      border-radius: 6px;
+    }
+
+    /* ─── Last loss info ─── */
+    .last-loss {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .last-loss .score {
+      font-weight: 700;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* ─── Taunt ─── */
+    .taunt {
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #c94455;
+      border-top: 1px solid #1e1e1e;
+      padding-top: 0.85rem;
+      line-height: 1.45;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    footer a { color: var(--red); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-badge">Domínio Rubro-Negro</div>
+    <h1 class="site-title">Ninguém<br>Ganha<br>da Gente</h1>
+    <p class="site-subtitle">O placar do domínio rubro-negro</p>
+    <div class="header-divider"></div>
+  </header>
+
+  <main class="grid" id="rivals-grid">
+    <!-- Cards injetados via JS -->
+  </main>
+
+  <footer>
+    Atualizado automaticamente &middot; Dados verificados até Mai/2026 &middot;
+    <a href="javascript:void(0)" onclick="alert('Use updateRival(id, novaData, jogos) no console do browser para atualizar.')">Como atualizar?</a>
+  </footer>
+
+  <script>
+    // Dados carregados de data.json (atualizado automaticamente via GitHub Actions)
+    let serverRivals = [];
+
+    async function loadData() {
+      try {
+        const res = await fetch('data.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        serverRivals = json.rivals ?? [];
+      } catch (e) {
+        console.warn('[NGDG] Falha ao carregar data.json:', e.message);
+      }
+    }
+
+    /* ── Merge com overrides manuais salvos no localStorage ── */
+    function loadRivals() {
+      const saved = JSON.parse(localStorage.getItem('ngdg_rivals') || '{}');
+      return serverRivals.map(r => ({ ...r, ...(saved[r.id] || {}) }));
+    }
+
+    /* ── Override manual via console do browser (emergência) ── */
+    window.updateRival = function(id, newLastLoss, newGamesSince) {
+      const rival = serverRivals.find(r => r.id === id);
+      if (!rival) { console.error('[NGDG] Rival não encontrado:', id); return; }
+      const saved = JSON.parse(localStorage.getItem('ngdg_rivals') || '{}');
+      saved[id] = { ...(saved[id] || {}) };
+      if (newLastLoss)   saved[id].lastLoss   = newLastLoss;
+      if (newGamesSince !== undefined) saved[id].gamesSince = newGamesSince;
+      localStorage.setItem('ngdg_rivals', JSON.stringify(saved));
+      renderAll();
+      console.log(`[NGDG] "${rival.name}" atualizado localmente.`, saved[id]);
+    };
+
+    /* ── Calcula diferença entre lastLoss e agora ── */
+    function calcElapsed(lastLoss) {
+      const start  = new Date(lastLoss + 'T00:00:00');
+      const now    = new Date();
+      let   years  = now.getFullYear() - start.getFullYear();
+      let   months = now.getMonth()    - start.getMonth();
+      let   days   = now.getDate()     - start.getDate();
+
+      if (days   < 0) { months--; const prev = new Date(now.getFullYear(), now.getMonth(), 0); days += prev.getDate(); }
+      if (months < 0) { years--;  months += 12; }
+
+      const totalMs = now - start;
+      const secs    = Math.floor(totalMs / 1000) % 60;
+      const mins    = Math.floor(totalMs / 60000) % 60;
+      const hours   = Math.floor(totalMs / 3600000) % 24;
+
+      return { years, months, days, hours, mins, secs, totalDays: Math.floor(totalMs / 86400000) };
+    }
+
+    /* ── Formata label da contagem longa ── */
+    function formatElapsed({ years, months, days }) {
+      const parts = [];
+      if (years)  parts.push(`${years} ano${years  > 1 ? 's' : ''}`);
+      if (months) parts.push(`${months} ${months  > 1 ? 'meses' : 'mês'}`);
+      parts.push(`${days} dia${days !== 1 ? 's' : ''}`);
+      return parts.join(', ');
+    }
+
+    /* ── Formata data para pt-BR ── */
+    function fmtDate(isoStr) {
+      const [y, m, d] = isoStr.split('-');
+      return `${d}/${m}/${y}`;
+    }
+
+    /* ── Cria HTML de um card ── */
+    function buildCard(rival) {
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.dataset.id = rival.id;
+      el.innerHTML = `
+        <div class="card-header">
+          <span class="rival-emoji" aria-hidden="true">${rival.emoji}</span>
+          <span class="rival-name">${rival.name}</span>
+        </div>
+        <div class="counter-label">Sem perder para o Mengão há</div>
+        <div class="counter-days" aria-live="polite">
+          <span class="days-label">—</span>
+        </div>
+        <div class="counter-clock">
+          <span class="tick">⏱</span> <span class="clock-time">00:00:00</span>
+        </div>
+        <span class="games-badge">${rival.gamesSince} JOGO${rival.gamesSince !== 1 ? 'S' : ''} SEM PERDER</span>
+        <div class="last-loss">
+          <span>Última derrota: <strong>${fmtDate(rival.lastLoss)}</strong></span>
+          <span class="score">${rival.lastScore}</span>
+          <span>${rival.competition}</span>
+        </div>
+        <p class="taunt">"${rival.taunt}"</p>
+      `;
+      return el;
+    }
+
+    /* ── Atualiza o texto do contador de um card já existente ── */
+    function refreshCard(rival) {
+      const el = document.querySelector(`.card[data-id="${rival.id}"]`);
+      if (!el) return;
+      const elapsed = calcElapsed(rival.lastLoss);
+
+      el.querySelector('.days-label').textContent = formatElapsed(elapsed);
+      el.querySelector('.clock-time').textContent =
+        String(elapsed.hours).padStart(2,'0') + ':' +
+        String(elapsed.mins ).padStart(2,'0') + ':' +
+        String(elapsed.secs ).padStart(2,'0');
+
+      /* Atualiza badge caso jogos tenham mudado via updateRival */
+      el.querySelector('.games-badge').textContent =
+        `${rival.gamesSince} JOGO${rival.gamesSince !== 1 ? 'S' : ''} SEM PERDER`;
+    }
+
+    /* ── Renderiza (ou re-renderiza) todos os cards ── */
+    function renderAll() {
+      const grid   = document.getElementById('rivals-grid');
+      const rivals = loadRivals();
+
+      /* Re-renderiza só se o número de cards mudou */
+      if (grid.children.length !== rivals.length) {
+        grid.innerHTML = '';
+        rivals.forEach(r => grid.appendChild(buildCard(r)));
+      }
+      rivals.forEach(refreshCard);
+    }
+
+    /* ── Inicia ── */
+    loadData().then(() => {
+      renderAll();
+      setInterval(renderAll, 1000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+name: Backfill Histórico
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # todo dia às 07:00 UTC (04:00 BRT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verifica se backfill já foi concluído
+        id: check
+        run: |
+          if [ -f backfill-progress.json ]; then
+            COMPLETED=$(node -e "const p=require('./backfill-progress.json'); console.log(p.completed)")
+            echo "completed=$COMPLETED" >> $GITHUB_OUTPUT
+          else
+            echo "completed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Roda backfill (400 chamadas)
+        if: steps.check.outputs.completed != 'true'
+        run: node scripts/backfill.js
+        env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+
+      - name: Aplica backfill ao data.json (quando concluído)
+        if: steps.check.outputs.completed != 'true'
+        run: |
+          COMPLETED=$(node -e "const p=require('./backfill-progress.json'); console.log(p.completed)")
+          if [ "$COMPLETED" = "true" ]; then
+            node scripts/apply-backfill.js
+            echo "APPLIED=true" >> $GITHUB_ENV
+          fi
+
+      - name: Commit e push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add backfill-progress.json data.json
+          git diff --staged --quiet || (
+            MSG="chore: backfill histórico [skip ci]"
+            if [ "$APPLIED" = "true" ]; then
+              MSG="chore: aplica backfill histórico — data.json atualizado [skip ci]"
+            fi
+            git commit -m "$MSG" && git push
+          )
+
+      - name: Desativa workflow após conclusão
+        if: steps.check.outputs.completed == 'true'
+        run: |
+          echo "✅ Backfill já concluído. Desative este workflow manualmente em Actions → Backfill Histórico → ⋯ → Disable workflow."

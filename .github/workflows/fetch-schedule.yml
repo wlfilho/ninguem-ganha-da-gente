@@ -1,0 +1,32 @@
+name: Baixa Calendário
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # toda segunda-feira às 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Baixa calendário do Flamengo
+        run: node scripts/fetch-schedule.js
+        env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+
+      - name: Commit e push se houve mudança
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add schedule.json
+          git diff --staged --quiet || (git commit -m "chore: atualiza calendário [skip ci]" && git push)

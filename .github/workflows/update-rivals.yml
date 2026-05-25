@@ -1,0 +1,33 @@
+name: Atualiza Rivais
+
+on:
+  schedule:
+    # Roda 4x por dia (UTC): cobre jogos às 19h, 21h e 22h BRT
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch: # permite rodar manualmente pelo GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Atualiza dados dos rivais
+        run: node scripts/update-rivals.js
+        env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+
+      - name: Commit e push se houve mudança
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || (git commit -m "chore: atualiza rivais [skip ci]" && git push)
