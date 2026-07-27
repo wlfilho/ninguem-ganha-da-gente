@@ -1,4 +1,113 @@
 {
-  "updatedAt": "2026-07-20T08:42:52.412Z",
-  "games": []
+  "updatedAt": "2026-07-27T09:33:51.355Z",
+  "games": [
+    {
+      "eventId": 5103623,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "05.09.2026 02:00",
+      "home": "Remo",
+      "homeId": 1626,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103574,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "10.08.2026 00:30",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Vitoria",
+      "awayId": 7733,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103624,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "12.09.2026 02:00",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Corinthians",
+      "awayId": 9808,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103588,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "16.08.2026 23:30",
+      "home": "Mirassol",
+      "homeId": 163782,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103553,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "23.07.2026 02:30",
+      "home": "Chapecoense AF",
+      "homeId": 197693,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 4
+    },
+    {
+      "eventId": 5103599,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "23.08.2026 01:30",
+      "home": "Cruzeiro",
+      "homeId": 9781,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103560,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "26.07.2026 23:30",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Sao Paulo",
+      "awayId": 10277,
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    {
+      "eventId": 5103604,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "29.08.2026 02:00",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Botafogo RJ",
+      "awayId": 8517,
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103570,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "30.07.2026 00:30",
+      "home": "Internacional",
+      "homeId": 8702,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 0
+    }
+  ]
 }
