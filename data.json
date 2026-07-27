@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "2026-05-25",
+  "lastUpdated": "2026-07-27",
   "processedEventIds": [
-    "5103524"
+    "5103524",
+    "5103560"
   ],
   "rivals": [
     {
@@ -78,7 +79,7 @@
       "lastLoss": "2026-01-29",
       "lastScore": "São Paulo 2×1 Flamengo",
       "competition": "Brasileirão Série A",
-      "gamesSince": 0,
+      "gamesSince": 1,
       "taunt": "Tricolor de SP, mas campeão quem é é o do Rio."
     },
     {
