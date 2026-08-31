@@ -1,8 +1,9 @@
 {
-  "lastUpdated": "2026-07-27",
+  "lastUpdated": "2026-08-31",
   "processedEventIds": [
     "5103524",
-    "5103560"
+    "5103560",
+    "5103604"
   ],
   "rivals": [
     {
@@ -24,7 +25,7 @@
       "lastLoss": "2024-08-18",
       "lastScore": "Botafogo 4×1 Flamengo",
       "competition": "Campeonato Brasileiro",
-      "gamesSince": 6,
+      "gamesSince": 7,
       "taunt": "Libertadores foi um acidente. O clássico é nosso."
     },
     {
