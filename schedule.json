@@ -1,4 +1,53 @@
 {
-  "updatedAt": "2026-09-21T11:32:21.738Z",
-  "games": []
+  "updatedAt": "2026-09-28T12:26:35.175Z",
+  "games": [
+    {
+      "eventId": 5103394,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "03.09.2026 00:30",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Mirassol",
+      "awayId": 163782,
+      "homeScore": 2,
+      "awayScore": 0
+    },
+    {
+      "eventId": 5103623,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "06.09.2026 21:00",
+      "home": "Remo",
+      "homeId": 1626,
+      "away": "Flamengo",
+      "awayId": 9770,
+      "homeScore": 0,
+      "awayScore": 1
+    },
+    {
+      "eventId": 5103624,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "13.09.2026 22:30",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Corinthians",
+      "awayId": 9808,
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    {
+      "eventId": 5103604,
+      "competition": "Brasileirão Série A",
+      "leagueId": 268,
+      "date": "30.08.2026 21:00",
+      "home": "Flamengo",
+      "homeId": 9770,
+      "away": "Botafogo",
+      "awayId": 8517,
+      "homeScore": 3,
+      "awayScore": 0
+    }
+  ]
 }
